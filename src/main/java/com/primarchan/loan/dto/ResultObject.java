@@ -1,7 +1,7 @@
-package com.fastcampus.loan.dto;
+package com.primarchan.loan.dto;
 
-import com.fastcampus.loan.exception.BaseException;
-import com.fastcampus.loan.exception.ResultType;
+import com.primarchan.loan.exception.BaseException;
+import com.primarchan.loan.exception.ResultType;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

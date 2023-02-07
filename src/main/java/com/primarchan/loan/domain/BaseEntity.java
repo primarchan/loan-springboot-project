@@ -1,4 +1,4 @@
-package com.fastcampus.loan.domain;
+package com.primarchan.loan.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

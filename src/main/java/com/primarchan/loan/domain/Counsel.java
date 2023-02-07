@@ -1,4 +1,4 @@
-package com.fastcampus.loan.domain;
+package com.primarchan.loan.domain;
 
 import java.time.LocalDateTime;
 import javax.persistence.Column;

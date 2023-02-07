@@ -1,6 +1,6 @@
-package com.fastcampus.loan.dto;
+package com.primarchan.loan.dto;
 
-import com.fastcampus.loan.exception.BaseException;
+import com.primarchan.loan.exception.BaseException;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
