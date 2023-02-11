@@ -15,7 +15,6 @@ public class CounselController extends AbstractController {
 
     @PostMapping
     public ResponseDTO<Response> create(@RequestBody Request request) {
-
         return ok(counselService.create(request));
     }
 
@@ -27,6 +26,12 @@ public class CounselController extends AbstractController {
     @PutMapping("/{counselId}")
     public ResponseDTO<Response> update(@PathVariable Long counselId, @RequestBody Request request) {
         return ok(counselService.update(counselId, request));
+    }
+
+    @DeleteMapping("/{counselId}")
+    public ResponseDTO<Response> delete(@PathVariable Long counselId) {
+        counselService.delete(counselId);
+        return ok();
     }
 
 }
