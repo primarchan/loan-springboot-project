@@ -1,10 +1,11 @@
 package com.primarchan.loan.service;
 
-import com.primarchan.loan.dto.CounselDTO;
+import com.primarchan.loan.dto.CounselDTO.*;
 
 public interface CounselService {
 
-    CounselDTO.Response create(CounselDTO.Request request);
+    Response create(Request request);
 
+    Response get(Long counselId);
 
 }

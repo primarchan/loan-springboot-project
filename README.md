@@ -1,4 +1,4 @@
-# Fastcampus Loan API Server using Spring Boot
+# Loan API Server using Spring Boot
 
 ## Introduction
 
