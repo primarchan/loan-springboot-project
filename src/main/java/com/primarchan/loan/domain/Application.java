@@ -1,7 +1,6 @@
 package com.primarchan.loan.domain;
 
 import lombok.*;
-import net.bytebuddy.asm.Advice;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Where;
