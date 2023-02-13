@@ -1,6 +1,7 @@
 package com.primarchan.loan.controller;
 
-import com.primarchan.loan.dto.ApplicationDTO.*;
+import com.primarchan.loan.dto.ApplicationDTO.Request;
+import com.primarchan.loan.dto.ApplicationDTO.Response;
 import com.primarchan.loan.dto.ResponseDTO;
 import com.primarchan.loan.service.ApplicationService;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,11 @@ public class ApplicationController extends AbstractController {
     @GetMapping("/{applicationId}")
     public ResponseDTO<Response> get(@PathVariable Long applicationId) {
         return ok(applicationService.get(applicationId));
+    }
+
+    @PutMapping("/{applicationId}")
+    public ResponseDTO<Response> update(@PathVariable Long applicationId, @RequestBody Request request) {
+        return ok(applicationService.update(applicationId, request));
     }
 
 }
