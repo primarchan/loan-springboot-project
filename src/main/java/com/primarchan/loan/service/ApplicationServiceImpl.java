@@ -2,6 +2,8 @@ package com.primarchan.loan.service;
 
 import com.primarchan.loan.domain.Application;
 import com.primarchan.loan.dto.ApplicationDTO.*;
+import com.primarchan.loan.exception.BaseException;
+import com.primarchan.loan.exception.ResultType;
 import com.primarchan.loan.repository.ApplicationRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -24,6 +26,15 @@ public class ApplicationServiceImpl implements ApplicationService {
         Application applied = applicationRepository.save(application);
 
         return modelMapper.map(applied, Response.class);
+    }
+
+    @Override
+    public Response get(Long applicationId) {
+        Application application = applicationRepository.findById(applicationId).orElseThrow(() -> {
+            throw new BaseException(ResultType.SYSTEM_ERROR);
+        });
+
+        return modelMapper.map(application, Response.class);
     }
 
 }

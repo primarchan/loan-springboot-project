@@ -1,7 +1,6 @@
 package com.primarchan.loan.service;
 
-import static org.assertj.core.api.Assertions.as;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 import com.primarchan.loan.domain.Application;
@@ -18,6 +17,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
 class ApplicationServiceTest {
@@ -53,6 +53,21 @@ class ApplicationServiceTest {
 
         assertThat(actual.getHopeAmount()).isSameAs(entity.getHopeAmount());
         assertThat(actual.getName()).isSameAs(entity.getName());
+    }
+
+    @Test
+    void Should_ReturnResponseOfExistApplicationEntity_When_RequestExistApplicationId() {
+        Long findId = 1L;
+
+        Application entity = Application.builder()
+                .applicationId(1L)
+                .build();
+
+        when(applicationRepository.findById(findId)).thenReturn(Optional.ofNullable(entity));
+
+        Response actual = applicationService.get(findId);
+
+        assertThat(actual.getApplicationId()).isSameAs(findId);
     }
 
 }
