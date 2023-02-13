@@ -12,4 +12,5 @@ public interface ApplicationService {
 
     void delete(Long applicationId);
 
+    Boolean acceptTerms(Long applicationId, AcceptTerms request);
 }

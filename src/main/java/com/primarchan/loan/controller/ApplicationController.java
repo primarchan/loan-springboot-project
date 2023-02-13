@@ -1,5 +1,6 @@
 package com.primarchan.loan.controller;
 
+import com.primarchan.loan.dto.ApplicationDTO.*;
 import com.primarchan.loan.dto.ApplicationDTO.Request;
 import com.primarchan.loan.dto.ApplicationDTO.Response;
 import com.primarchan.loan.dto.ResponseDTO;
@@ -34,6 +35,11 @@ public class ApplicationController extends AbstractController {
         applicationService.delete(applicationId);
 
         return ok();
+    }
+
+    @PostMapping("/{applicationId}/terms")
+    public ResponseDTO<Boolean> acceptTerms(@PathVariable Long applicationId, @RequestBody AcceptTerms request) {
+        return ok(applicationService.acceptTerms(applicationId, request));
     }
 
 }
