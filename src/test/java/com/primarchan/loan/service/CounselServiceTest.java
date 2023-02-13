@@ -1,6 +1,5 @@
 package com.primarchan.loan.service;
 
-import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -23,7 +22,7 @@ import org.modelmapper.ModelMapper;
 import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
-public class CounselServiceTests {
+public class CounselServiceTest {
 
     @InjectMocks
     CounselServiceImpl counselService;

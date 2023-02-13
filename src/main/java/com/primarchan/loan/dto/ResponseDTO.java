@@ -44,4 +44,5 @@ public class ResponseDTO<T> implements Serializable {
   public ResponseDTO(BaseException ex) {
     this.result = new ResultObject(ex);
   }
+
 }

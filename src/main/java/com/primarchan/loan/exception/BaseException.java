@@ -25,4 +25,5 @@ public class BaseException extends RuntimeException {
     this.desc = resultType.getDesc();
     this.extraMessage = extraMessage;
   }
+
 }
